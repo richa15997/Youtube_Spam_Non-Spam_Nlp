@@ -17,7 +17,7 @@ corpus=[]
 
 
 for i in range(0,1947):
-    content = re.sub('', '', dataset['CONTENT'][i])#used to remove all characters except a-zA-Z and replace the removed character with space
+    content = re.sub('[^a-zA-Z1-9:)(*-]', ' ', dataset['CONTENT'][i])#used to remove all characters except ones in bracket and replace the removed character with space
     content = content.lower()#convert all chars to lowercase
     content=content.split()#used to separate words from text in array
     ps= PorterStemmer()
@@ -48,3 +48,4 @@ y_pred = classifier.predict(X_test)
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
+#approx accuracy=(160+117)/390
