@@ -29,13 +29,6 @@ for i in range(0,1947):
         elif word in list_sad:
             content=re.sub(word,'sad',dataset['CONTENT'][i])
 
-
-#lists_happy='|'.join(list_happy)
-#content = re.sub(lists_happy, 'happy', dataset['CONTENT'][i])
-
-
-
-
 for i in range(0,1947):
     content = re.sub('[^a-zA-Z1-9:)(*-]', ' ', dataset['CONTENT'][i])#used to remove all characters except a-zA-Z and replace the removed character with space
     content = content.lower()#convert all chars to lowercase
@@ -68,4 +61,4 @@ y_pred = classifier.predict(X_test)
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
-(161+118)/390
+#approx acc=(161+118)/390
