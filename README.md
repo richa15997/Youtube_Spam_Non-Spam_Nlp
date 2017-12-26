@@ -1,4 +1,4 @@
-# youtube_spam_nlp
+# youtube_spam_non-spam_nlp
 
 This project helps to classify youtube comments as spam or non spam including emoticons. This is done using natural language processing techniques in python.
 
